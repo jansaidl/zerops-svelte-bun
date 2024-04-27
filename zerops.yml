@@ -2,8 +2,10 @@ zerops:
   - setup: svelte
     build:
       prepareCommands:
+        - echo $HOME
         - curl -fsSL https://bun.sh/install | bash
       buildCommands:
+        - echo $HOME
         - bun install
         - bun run build
       deploy:
@@ -11,5 +13,6 @@ zerops:
         - package.json
     run:
       prepareCommands:
+        - echo $HOME
         - curl -fsSL https://bun.sh/install | bash
       start: NODE_ENV=production bun start
