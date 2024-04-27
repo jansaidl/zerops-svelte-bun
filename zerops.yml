@@ -3,14 +3,15 @@ zerops:
     build:
       prepareCommands:
         - curl -fsSL https://bun.sh/install | bash
-        - export BUN_INSTALL="$HOME/.bun" && export PATH="$BUN_INSTALL/bin:$PATH"
+        - export BUN_INSTALL="$HOME/.bun"
+        - export PATH="$BUN_INSTALL/bin:$PATH"
       buildCommands:
         - bun install --production
-        - bun run build
       deploy:
-        - ./build
+        - ./
     run:
       prepareCommands:
         - curl -fsSL https://bun.sh/install | bash
-        - export BUN_INSTALL="$HOME/.bun" && export PATH="$BUN_INSTALL/bin:$PATH"
-      start: NODE_ENV=production bun start
+        - export BUN_INSTALL="$HOME/.bun"
+        - export PATH="$BUN_INSTALL/bin:$PATH"
+      start: NODE_ENV=production bun src/index.ts
