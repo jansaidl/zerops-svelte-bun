@@ -8,6 +8,7 @@ zerops:
         - /root/.bun/bin/bun run build
       deploy:
         - ./build
+        - package.json
     run:
       prepareCommands:
         - curl -fsSL https://bun.sh/install | bash
