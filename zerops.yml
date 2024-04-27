@@ -4,7 +4,7 @@ zerops:
       prepareCommands:
         - "echo \"HOME: $HOME\""
         - ls -la
-        - rm ~/.bashrc && touch ~/.bashrc
+        # - rm ~/.bashrc && touch ~/.bashrc
         - curl -fsSL https://bun.sh/install | bash
       buildCommands:
         - "echo \"HOME: $HOME\""
@@ -18,7 +18,7 @@ zerops:
       prepareCommands:
         - "echo \"HOME: $HOME\""
         - ls -la
-        - rm ~/.bashrc && touch ~/.bashrc
+        # - rm ~/.bashrc && touch ~/.bashrc
         - curl -fsSL https://bun.sh/install | bash
         - echo "$HOME"
       start: NODE_ENV=production bun start
