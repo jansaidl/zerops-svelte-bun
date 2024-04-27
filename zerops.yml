@@ -12,6 +12,7 @@ zerops:
         - package.json
     run:
       prepareCommands:
+        - echo "$HOME"
         - rm ~/.bashrc && touch ~/.bashrc
         - curl -fsSL https://bun.sh/install | bash
         - echo "$HOME"
