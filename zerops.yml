@@ -2,13 +2,8 @@ zerops:
   - setup: svelte
     build:
       prepareCommands:
-        - "echo \"HOME: $HOME\""
-        - ls -la
-        # - rm ~/.bashrc && touch ~/.bashrc
         - curl -fsSL https://bun.sh/install | bash
       buildCommands:
-        - "echo \"HOME: $HOME\""
-        - ls -la
         - bun install
         - bun run build
       deploy:
@@ -16,9 +11,5 @@ zerops:
         - package.json
     run:
       prepareCommands:
-        - "echo \"HOME: $HOME\""
-        - ls -la
-        # - rm ~/.bashrc && touch ~/.bashrc
         - curl -fsSL https://bun.sh/install | bash
-        - echo "$HOME"
       start: NODE_ENV=production bun start
