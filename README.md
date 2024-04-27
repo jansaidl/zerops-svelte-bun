@@ -1,6 +1,6 @@
 # Zerop x Svelte with Bun runtime
 
-```yaml`
+```yaml
 project:
   name: zerops-bun
 services:
