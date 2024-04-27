@@ -4,14 +4,12 @@ zerops:
       prepareCommands:
         - curl -fsSL https://bun.sh/install | bash
       buildCommands:
-        - /root/.bun/bin/bun install
-        - ls -la
-        - cat /build/source/vite.config.ts
-        - /root/.bun/bin/bun run build
+        - bun install
+        - bun run build
       deploy:
         - ./build
         - package.json
     run:
       prepareCommands:
         - curl -fsSL https://bun.sh/install | bash
-      start: env > x && nc -l 9002
+      start: NODE_ENV=production bun start
